@@ -110,7 +110,8 @@ export default class Admin extends Component {
   render() {
     const myImages = this.state.images.map(image => {
       return (
-        <div  className="list-group-item">
+        <div key={image._id}
+          className="list-group-item">
           <div className="container">
             <div className="row">
               <div className="col-sm">

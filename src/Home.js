@@ -34,34 +34,34 @@ export default class Home extends Component {
   render() {
     const myImages = this.state.images.map(image => {
       return (
-        <div className={"carousel-item " + (image.active ? "active" : "")}>
-          <img class="d-block w-100" src={image.img} alt={image.title} />
+        <div key={image._id} className={"carousel-item" + (image.active ? "active" : "")}>
+          <img className="d-block w-100" src={image.img} alt={image.title} />
         </div>
       );
     });
 
     console.log(this.state); //// this will print the new state (always executes once the job is done)
     return (
-      <div id="carouselUtah" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">{myImages}</div>
+      <div id="carouselUtah" className="carousel slide" data-ride="carousel">
+        <div className="carousel-inner">{myImages}</div>
 
         <a
-          class="carousel-control-prev"
+          className="carousel-control-prev"
           href="#carouselUtah"
           role="button"
           data-slide="prev"
         >
-          <span class="carousel-control-prev-icon" aria-hidden="true" />
-          <span class="sr-only">Previous</span>
+          <span className="carousel-control-prev-icon" aria-hidden="true" />
+          <span className="sr-only">Previous</span>
         </a>
         <a
-          class="carousel-control-next"
+          className="carousel-control-next"
           href="#carouselUtah"
           role="button"
           data-slide="next"
         >
-          <span class="carousel-control-next-icon" aria-hidden="true" />
-          <span class="sr-only">Next</span>
+          <span className="carousel-control-next-icon" aria-hidden="true" />
+          <span className="sr-only">Next</span>
         </a>
       </div>
     );
