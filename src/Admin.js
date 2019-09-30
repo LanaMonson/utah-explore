@@ -32,7 +32,7 @@ export default class Admin extends Component {
   //react does autobindings for you automatically 
 
   loadImageList() {
-    return fetch(`${baseURL}`)
+    return fetch(`${baseURL}/images`)
       .then(results => {
         return results.json();
       })
@@ -55,7 +55,7 @@ export default class Admin extends Component {
 
 //CRUD
   addImage(e) {
-    return fetch(`${baseURL}`, {
+    return fetch(`${baseURL}/images`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -74,7 +74,7 @@ export default class Admin extends Component {
   editImage(e) {
     const txt = document.getElementById("title" + e.target.id);
     const imgId = e.target.id;
-    return fetch(`${baseURL}` + imgId, {
+    return fetch(`${baseURL}/` + imgId, {
       method: "PUT",
       headers: {
         Accept: "application/json",
@@ -92,7 +92,7 @@ export default class Admin extends Component {
 
   deleteImage(e) {
     const imgId = e.target.id;
-    return fetch(`${baseURL}` + imgId, {
+    return fetch(`${baseURL}/` + imgId, {
       method: "DELETE",
       headers: {
         Accept: "application/json",

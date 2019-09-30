@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export const baseURL = "https://mighty-gorge-69620.herokuapp.com/"
+export const baseURL = "https://mighty-gorge-69620.herokuapp.com"
 export default class Home extends Component {
   state = {
     images: []
