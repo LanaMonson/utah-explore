@@ -74,7 +74,7 @@ export default class Admin extends Component {
   editImage(e) {
     const txt = document.getElementById("title" + e.target.id);
     const imgId = e.target.id;
-    return fetch(`${baseURL}/` + imgId, {
+    return fetch(`${baseURL}/images` + imgId, {
       method: "PUT",
       headers: {
         Accept: "application/json",
@@ -92,7 +92,7 @@ export default class Admin extends Component {
 
   deleteImage(e) {
     const imgId = e.target.id;
-    return fetch(`${baseURL}/` + imgId, {
+    return fetch(`${baseURL}/images/` + imgId, {
       method: "DELETE",
       headers: {
         Accept: "application/json",
