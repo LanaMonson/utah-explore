@@ -12,7 +12,7 @@ export default class Home extends Component {
   //this technique called by React itself to either fetch the data 
   //from An External API or perform some unique operations which need the JSX elements.
   componentDidMount() {
-    return fetch(`${baseURL}`)
+    return fetch(`${baseURL}/images`)
       .then(results => {
         return results.json();
       })
