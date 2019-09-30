@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+export const baseURL = "https://mighty-gorge-69620.herokuapp.com/"
 export default class Home extends Component {
   state = {
     images: []
@@ -11,7 +12,7 @@ export default class Home extends Component {
   //this technique called by React itself to either fetch the data 
   //from An External API or perform some unique operations which need the JSX elements.
   componentDidMount() {
-    return fetch("http://localhost:7777/images")
+    return fetch(`${baseURL}`)
       .then(results => {
         return results.json();
       })

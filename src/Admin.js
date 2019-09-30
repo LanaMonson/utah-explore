@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {baseURL} from "./Home"
 
 export default class Admin extends Component {
   state = {
@@ -31,7 +32,7 @@ export default class Admin extends Component {
   //react does autobindings for you automatically 
 
   loadImageList() {
-    return fetch("http://localhost:7777/images")
+    return fetch(`${baseURL}`)
       .then(results => {
         return results.json();
       })
@@ -54,7 +55,7 @@ export default class Admin extends Component {
 
 //CRUD
   addImage(e) {
-    return fetch("http://localhost:7777/images", {
+    return fetch(`${baseURL}`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -73,7 +74,7 @@ export default class Admin extends Component {
   editImage(e) {
     const txt = document.getElementById("title" + e.target.id);
     const imgId = e.target.id;
-    return fetch("http://localhost:7777/images/" + imgId, {
+    return fetch(`${baseURL}` + imgId, {
       method: "PUT",
       headers: {
         Accept: "application/json",
@@ -91,7 +92,7 @@ export default class Admin extends Component {
 
   deleteImage(e) {
     const imgId = e.target.id;
-    return fetch("http://localhost:7777/images/" + imgId, {
+    return fetch(`${baseURL}` + imgId, {
       method: "DELETE",
       headers: {
         Accept: "application/json",
